@@ -1,14 +1,14 @@
-# Inherit omni-specific board config
-include device/huawei/angler/BoardConfigOmni.mk
+# Inherit zombi-specific board config
+include device/huawei/angler/BoardConfigZombi.mk
 
 # Inherit base AOSP device configuration
 $(call inherit-product, device/huawei/angler/aosp_angler.mk)
 
 # Inherit APNs list
-$(call inherit-product, vendor/omni/config/gsm.mk)
+$(call inherit-product, vendor/zombi/config/gsm.mk)
 
 # Inherit from our custom product configuration
-$(call inherit-product, vendor/omni/config/common.mk)
+$(call inherit-product, vendor/zombi/config/common.mk)
 
 # Bootanimation
 TARGET_BOOTANIMATION_SIZE := 960x640
@@ -21,8 +21,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1
 
-# Override product naming for Omni
-PRODUCT_NAME := omni_angler
+# Override product naming for Zombi
+PRODUCT_NAME := zombi_angler
 PRODUCT_BRAND := google
 PRODUCT_MODEL := Nexus 6P
 PRODUCT_MANUFACTURER := HUAWEI
